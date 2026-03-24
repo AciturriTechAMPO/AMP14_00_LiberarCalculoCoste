@@ -1,0 +1,6 @@
+{
+  "Name": "AMP14_00_LiberarCalculoCoste",
+  "ProjectType": "Process",
+  "Description": "Liberar el calculo coste de los materiales en la transacción CK51N de SAP",
+  "MainFile": "Main.xaml"
+}
