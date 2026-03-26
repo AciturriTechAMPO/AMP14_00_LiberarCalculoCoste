@@ -1,0 +1,14 @@
+﻿{
+  "Name": "TextField Semáf.rojo S…",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "mXdYuI9GqUO6617kRyM-uA",
+  "Reference": "QIwDNHBmYkWUle_j6tfhqw/mXdYuI9GqUO6617kRyM-uA",
+  "ParentRef": "QIwDNHBmYkWUle_j6tfhqw/SQV4EnrV8kaiZafeRzfvEg",
+  "Created": "2026-03-26T01:36:51.3662901Z",
+  "Updated": "2026-03-26T01:36:51.3662901Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

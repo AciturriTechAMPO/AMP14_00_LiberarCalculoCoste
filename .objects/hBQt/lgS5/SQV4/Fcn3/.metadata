@@ -1,0 +1,13 @@
+﻿{
+  "Name": "ScrollContainer KOSTSA…",
+  "Type": "Element",
+  "Id": "Fcn3OY3xTkSVcvsOpj90Sg",
+  "Reference": "QIwDNHBmYkWUle_j6tfhqw/Fcn3OY3xTkSVcvsOpj90Sg",
+  "ParentRef": "QIwDNHBmYkWUle_j6tfhqw/SQV4EnrV8kaiZafeRzfvEg",
+  "Created": "2026-03-26T01:23:09.6373743Z",
+  "Updated": "2026-03-26T01:23:09.6373743Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

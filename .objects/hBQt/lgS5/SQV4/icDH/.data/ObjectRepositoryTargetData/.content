@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="mfDyCHsDFkajxPmXWQuHcA" Reference="QIwDNHBmYkWUle_j6tfhqw/icDHyYJkhE-qmMhSLZn9AQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="180, 135, 20, 20" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[*]/btn[*]' tooltip='Continuar y grabar*' type='GuiButton' /&gt;" Guid="08e369ee-2eda-45cb-9b0d-0bade650f219" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Parámetros de actualización' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]">
+      <imageRef attrName="InformativeScreenshot" originalValue="02bd17f5672e2ccce1c4e0af197cd1e3.png" xmlns="">0-1-eBo02-UC19J3gLBtFog</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

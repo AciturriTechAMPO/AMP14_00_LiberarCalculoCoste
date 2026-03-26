@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="dUczNMpvG0KgQnWXKdTx9Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="179, 335, 34, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subALL:SAPLCKDI:*/tabsREITER/tabpALLG/ssubALLGEMEIN:SAPLCKDI:*/ctxtCKI64A-UEBID' tooltip='Control de traspaso' type='GuiCTextField' /&gt;" Guid="0746ae48-6349-4de4-97ae-8b80341b9457" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]">
+      <imageRef attrName="InformativeScreenshot" originalValue="720215675cbe321769bea7fe5deb68f0.png" xmlns="">0RZ3Zqbu7jUyr6bQziM_QYQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

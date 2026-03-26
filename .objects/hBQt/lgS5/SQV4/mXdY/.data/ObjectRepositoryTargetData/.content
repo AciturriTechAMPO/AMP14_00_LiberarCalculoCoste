@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="M-IVuQW1XU-dtT1WEvqtMQ" Reference="QIwDNHBmYkWUle_j6tfhqw/mXdYuI9GqUO6617kRyM-uA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="725, 335, 34, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subALL:SAPLCKDI:*/tabsREITER/tabpKOST/ssubKOST:SAPLCKDI:*/txtH_AMPEL' tooltip='Semáf*' type='GuiTextField' /&gt;" Guid="bfd6b3e6-ba87-4ddc-9f1f-734792bc5a3b" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="f23558980be53e5c8679aed274247e9a.png" xmlns="">0AmSBYhnNZ0imNWYs7-aK5w</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetAttributeGeneric</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

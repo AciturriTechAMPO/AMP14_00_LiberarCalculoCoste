@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Crear CC lista materiales para pedido",
+  "Type": "Screen",
+  "Id": "SQV4EnrV8kaiZafeRzfvEg",
+  "Reference": "QIwDNHBmYkWUle_j6tfhqw/SQV4EnrV8kaiZafeRzfvEg",
+  "ParentRef": "QIwDNHBmYkWUle_j6tfhqw/lgS5IfkQdkW3HLCGffvuiw",
+  "Created": "2026-03-26T01:17:25.9359312Z",
+  "Updated": "2026-03-26T01:17:25.9359312Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

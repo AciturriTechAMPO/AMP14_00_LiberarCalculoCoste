@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Button Marcar (F9)",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "v6guXqTMXUSR5TC2nzNrIA",
+  "Reference": "QIwDNHBmYkWUle_j6tfhqw/v6guXqTMXUSR5TC2nzNrIA",
+  "ParentRef": "QIwDNHBmYkWUle_j6tfhqw/SQV4EnrV8kaiZafeRzfvEg",
+  "Created": "2026-03-26T03:35:51.6571024Z",
+  "Updated": "2026-03-26T03:35:51.6571024Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

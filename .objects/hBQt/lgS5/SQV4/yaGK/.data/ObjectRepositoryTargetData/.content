@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="4Okx41qMWEymALgThWQt3w" Reference="QIwDNHBmYkWUle_j6tfhqw/yaGKMc8rLE-opyvqcdMYUA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="543, 159, 48, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subALL:SAPLCKDI:*/subKOPF:SAPLCKDI:*/txtCKI64A-POSNR' tooltip='Número de posición del documento comercial' type='GuiTextField' /&gt;" Guid="044db802-fe0b-40b3-a3fc-b5a0315595f5" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="49fd6b74ab79f0df50be22ce3b8b13f1.png" xmlns="">01w0EQ6YdO0OiaNieqXvoQA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
