@@ -83,6 +83,18 @@
         "testCaseType": "TestCase",
         "executionTemplateType": "Local",
         "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "0326cacd-4820-44c6-9bf1-b5916e842df7",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\Apps\\SAP\\TestCase_SAP_EnterTransaction.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "ac44d28a-261c-4a74-b732-442df73a5626",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\Apps\\SAP\\TestCase_SAP_Login.xaml"
       }
     ],
     "saveToCloud": false
