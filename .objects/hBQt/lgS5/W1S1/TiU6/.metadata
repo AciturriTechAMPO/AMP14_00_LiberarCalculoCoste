@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Button Log de errores",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "TiU6J_j8RESctdP0TehNfw",
+  "Reference": "QIwDNHBmYkWUle_j6tfhqw/TiU6J_j8RESctdP0TehNfw",
+  "ParentRef": "QIwDNHBmYkWUle_j6tfhqw/W1S1YMUwaEmEHeBu4b2nFw",
+  "Created": "2026-03-31T22:08:17.9910567Z",
+  "Updated": "2026-03-31T22:08:17.9910567Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="NACfrBL1gUOYCI-Aqw61jg" Reference="QIwDNHBmYkWUle_j6tfhqw/Fcn3OY3xTkSVcvsOpj90Sg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="K33gW2R-JkW-Go87xn_jTQ" Reference="QIwDNHBmYkWUle_j6tfhqw/Fcn3OY3xTkSVcvsOpj90Sg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="207, 335, 552, 307" ElementVisibilityArgument="[UiPath.UIAutomationNext.Enums.NElementVisibility.Visible]" FullSelectorArgument="&lt;sap id='usr/subALL:SAPLCKDI:*/tabsREITER/tabpKOST' text='Costes' type='GuiTab' /&gt;&lt;sap id='usr/subALL:SAPLCKDI:*/tabsREITER/tabpKOST/ssubKOST:SAPLCKDI:*' type='GuiScrollContainer' /&gt;" Guid="45863894-ad20-4e7c-abe5-dfa44cbdb237" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]">
-      <imageRef attrName="InformativeScreenshot" originalValue="88a12e641eec8cb03afc7c1bc087f331.png" xmlns="">0s09vYTEtUE-8_m67_1vmzA</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="207, 335, 552, 307" ElementVisibilityArgument="[UiPath.UIAutomationNext.Enums.NElementVisibility.Interactive]" FullSelectorArgument="&lt;sap id='usr/subALL:SAPLCKDI:*/tabsREITER/tabpKOST/ssubKOST:SAPLCKDI:*/txtH_AMPEL' tooltip='Semáf*' type='GuiTextField' /&gt;" Guid="45863894-ad20-4e7c-abe5-dfa44cbdb237" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]">
+      <imageRef attrName="InformativeScreenshot" originalValue="88a12e641eec8cb03afc7c1bc087f331.png" xmlns="">0i2MQqkX5gU2pkDkGs6iIpw</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">CheckState</x:String>
   </ObjectRepositoryTargetData.Data>

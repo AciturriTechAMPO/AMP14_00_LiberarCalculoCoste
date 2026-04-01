@@ -60,6 +60,20 @@
         "testCaseId": "ac44d28a-261c-4a74-b732-442df73a5626",
         "testCaseType": "TestCase",
         "fileName": "Tests\\Apps\\SAP\\TestCase_SAP_Login.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "c90ee00d-8494-46ab-a476-d43bde4148c6",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\Apps\\SAP\\TestCase_SAP_EnterMaterialData.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "ce6bff14-794d-4ff5-b552-4c1935307c44",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\Apps\\SAP\\TestCase_SAP_Logout.xaml"
       }
     ],
     "saveToCloud": false

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Para materiallote 1100…",
+  "Type": "Element",
+  "Id": "JUhGcsPXu0O_G0j7cGbODA",
+  "Reference": "QIwDNHBmYkWUle_j6tfhqw/JUhGcsPXu0O_G0j7cGbODA",
+  "ParentRef": "QIwDNHBmYkWUle_j6tfhqw/SQV4EnrV8kaiZafeRzfvEg",
+  "Created": "2026-03-31T22:17:54.0812461Z",
+  "Updated": "2026-03-31T22:17:54.0812461Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="qfisXkFnZEijmL5XYcb0Ug" Reference="QIwDNHBmYkWUle_j6tfhqw/JUhGcsPXu0O_G0j7cGbODA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="533, 908, 553, 19" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap colName='CMF_TEXT' id='shellcont[*]/shell' tableRow='0' colTooltip='Texto de mensaje' /&gt;" Guid="c4254fe8-b6b2-45c0-93cc-9292f28fb55c" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete">
+      <imageRef attrName="InformativeScreenshot" originalValue="d3c561a4dede7a029d622728f6a75770.png" xmlns="">0jBZ1odpakUKJ3HzAjchHmA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
