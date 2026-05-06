@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="396,292" sap2010:WorkflowViewState.IdRef="Initialization_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="396,292" sap2010:WorkflowViewState.IdRef="Initialization_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>Microsoft.VisualBasic</x:String>
@@ -45,6 +45,7 @@
       <x:String>UiPath.Excel.Activities</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Dynamic</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -108,9 +109,14 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1174,1640" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1281,1697" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -118,6 +124,61 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Opening applications...&quot;]" />
+    <Sequence DisplayName="Open folder, run 'attrib' command, then close File Explorer." sap:VirtualizedContainerService.HintSize="478,57" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:StartProcess WorkingDirectory="{x:Null}" Arguments="[&quot;&quot;&quot;&quot; + Path.GetDirectoryName(Config(&quot;InitialInpuPath&quot;).ToString.Trim) + &quot;&quot;&quot;&quot;]" DisplayName="Open a folder using explorer.exe" FileName="explorer.exe" sap:VirtualizedContainerService.HintSize="416,120" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+      <Delay DisplayName="Delay workflow execution for 3 seconds" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="Delay_2" />
+      <ui:StartProcess WorkingDirectory="{x:Null}" Arguments="[&quot;+p &quot;&quot;&quot; + Config(&quot;InitialInpuPath&quot;).ToString.Trim + &quot;&quot;&quot;&quot;]" DisplayName="Start 'attrib' process with initial input path" FileName="attrib" sap:VirtualizedContainerService.HintSize="416,120" sap2010:WorkflowViewState.IdRef="StartProcess_2" />
+      <Delay DisplayName="Delay workflow execution for 10 seconds" Duration="00:00:10" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="Delay_1" />
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" ContinueOnError="True" DisplayName="Close the File Explorer application window" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="1d439fe0-ea94-4b4a-81f8-7876650900bb" Timeout="6" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,170" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,110" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="HardwareEvents" ScopeIdentifier="1d439fe0-ea94-4b4a-81f8-7876650900bb" Shortcuts="[d(hk)][d(alt)][k(F4)][u(alt)][u(hk)]" Version="V5" />
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.OCREngine>
+          <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+            <ActivityFunc.Argument>
+              <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+            </ActivityFunc.Argument>
+          </ActivityFunc>
+        </uix:NApplicationCard.OCREngine>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-8, -8, 1936, 1048" ContentHash="2XOIOiioDEKsYsTZPX6yvg" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAULSURBVFhH7ZRrbFNlGMf32Rhj/ARtgY1gBDcTE03QEO8i3gURERVBFEHxggp4QRzKgIHihjdC+GAUdICOi7BBN0RQkMkuXXfp6Lqu99vug8EusPMz79vT09OukpDtI0/yJE1Pen7/5/e8b9PSrtbVUoujo7L5c5SiHB3F4B+iR8u+dMQg++IRAwMlBtelUsO85N+OSAmwhB+NgUdL6MVSAwOlBvpLDMpAiZE+s5G+w6bpyb8fdunAykXZAm5koNRIf4lR6Vfh/WaTCNDZe2hcevI7hlViYqm6VJtaUeH0l5joM5uUXrOJ3sMmLhwao1w4NIbzssfSUzRWOV88jp7idM4VjePcwXTOHkhXzh5Ip1v07xl0yR5P5/4MpWPf+OxkfpqACs19JYaoZrMhCjQLiICaJLCneCwXjk1msDkXgj9AYBv4t4L/O/B9A9588GwCz0ZwrQNXDjR/Bk2fQNPH4PiAvrLpJPPTzhUZaN07msge0QYlUmggXGhUInuMSrjQROg3oxLeN4Hz5fNRfFvAlw/uDeBeD6614FoDzZ9HYc3ZKnAlOD6UUBzLofF9sL8L9qVDA/RYl0G7GdqKoe0gtO6H1r0Q+RUiuyBcAKGfILAVPF+CO1c3oQp2ZoPzUxX8kQpeAY5l0PieBGN/G84sGRqAyM7oywNbVJ3fgm9zdFLvV1Go0OrZAC791OrEAuxUNTeJqVOB34Izb0DD4hQB/AL8PfgF+GsVnAdedZ+pdDtXJ4Kl7hXQqNf9jgpeAg2vQ8NrYHs1VQD1EImpNfAXKjxJtwSLqVeBcyU0xXQvj06t7jkRvAgaFkL9K1D/cooAMd3yBKu6BVhOnRPXrQfr99wowHrdb0KD0L0IbHEw9fOgbm6KAPo9D9Et9vw/uuXpTtqzBC8GW1Q39QtU8EtQ+wLUzkkRQOpWwW6hO3at9GDdtUres12Adbo18Hwd+HmoeQ5qZqUIkLxnqVuAV0XB+j3r7rME6/es6VbBdS/qwM+C9RmonpEiwJA9p7jPYs8Jui+z51oVXDsnDrY+DdXTwfJEPECo9WxeuLWbkOiWLoItXQQinbL94Q58oQ68oXY8wXY8gTbaXUWq7uQ9C7CYeq62Z2png3VWHFz9JFgeB8ujugAtXVxJOb0tUd22FHuWusXEMfBMqRtLHEzVw1D5UDyAmPRKyuGOxHXXxcBiav2eZ4J1BlQ/JXVjeUwDU/kgVNwfDyD06qu7f5Bp+8LcsTvI5J1Bbt/hZ0lpi/bc3hxOuM9R3boDlqy76hGomgaVUyWYivug/O54AHegLSGAqOyyTpYeb2PCNg835DnJ2urSntmagol71usWU8d0V8V0T4XKB1TwPVB+F5RPiQdw+loT4LHKPdXB9ZucGPOc3Li5Sfu+rjGg6p4t7/MQ3Ro4rpuKe+XUnJ4Cp++k23xbPIDDE0kAi1r/TwfXbXSw7kQ7CwoDZGy0a8+sZ3yEdt+khHZPJLhrIoGdoifJ9hdMUnwFNyu+gkx8v2Ti/TkTj+ws3DuycG/PUtzbb8H5Y+ZqLYDdFU6ArzvZzrW5DnL+iq5m6YEgt+oMWGzeoX8iwymbM6i9fO3fbVyz1k7O8cRz0dk7qH2urHOPbIA6R0B7+cL9IdYcS30mYnW6xjWyAax2XzLjslVW7RzZAJYGbzLjsnWyqmlkA1TWuPMrat2U17ql3n+topspq27mlMUpW0BjfaLSkZ/8juHUfz4afEVL8T2MAAAAAElFTkSuQmCC" InformativeScreenshot="db2e02ca603751a41536b465a94d1c77.png" Reference="QIwDNHBmYkWUle_j6tfhqw/BdZm843GbEeU8cHx7qLD0A" Selector="&lt;wnd app='explorer.exe' cls='CabinetWClass' title='*Explorador de archivos' /&gt;" Version="V2">
+            <uix:TargetApp.Arguments>
+              <InArgument x:TypeArguments="x:String" />
+            </uix:TargetApp.Arguments>
+            <uix:TargetApp.FilePath>
+              <InArgument x:TypeArguments="x:String" />
+            </uix:TargetApp.FilePath>
+            <uix:TargetApp.WorkingDirectory>
+              <InArgument x:TypeArguments="x:String" />
+            </uix:TargetApp.WorkingDirectory>
+          </uix:TargetApp>
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+    </Sequence>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_Login - Invoke Workflow File (Apps\SAP\SAP_Login.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_Login.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -133,18 +194,18 @@
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="sd:DataTable">[TransactionData]</OutArgument>
+              <OutArgument x:TypeArguments="sd2:DataTable">[TransactionData]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="sd:DataTable">[New System.Data.DataTable]</InArgument>
+              <InArgument x:TypeArguments="sd2:DataTable">[New System.Data.DataTable]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
             <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="sd:DataTable">[TransactionDataAux]</OutArgument>
+              <OutArgument x:TypeArguments="sd2:DataTable">[TransactionDataAux]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="sd:DataTable">[New System.Data.DataTable]</InArgument>
+              <InArgument x:TypeArguments="sd2:DataTable">[New System.Data.DataTable]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
         </scg:List>
@@ -153,10 +214,10 @@
     <ui:ReadRange WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[TransactionData]" DisplayName="Read Range Workbook - initial input" sap:VirtualizedContainerService.HintSize="478,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A2" SheetName="[Config(&quot;InputSheetName&quot;).ToString.Trim]" WorkbookPath="[Config(&quot;InitialInpuPath&quot;).ToString.Trim]" />
     <Assign DisplayName="Assign - initialize data table" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
-        <OutArgument x:TypeArguments="sd:DataTable">[TransactionDataAux]</OutArgument>
+        <OutArgument x:TypeArguments="sd2:DataTable">[TransactionDataAux]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="sd:DataTable">[TransactionData.Copy]</InArgument>
+        <InArgument x:TypeArguments="sd2:DataTable">[TransactionData.Copy]</InArgument>
       </Assign.Value>
     </Assign>
     <If Condition="[TransactionData.AsEnumerable.Any(Function (row) row(&quot;COSTE LIBERADO&quot;).ToString.Trim.ToUpper.Equals(&quot;N&quot;))]" DisplayName="If - are the transactions" sap:VirtualizedContainerService.HintSize="478,582" sap2010:WorkflowViewState.IdRef="If_1">
@@ -175,10 +236,10 @@
           </sap:WorkflowViewStateService.ViewState>
           <Assign DisplayName="Assign - transactions to upload" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
-              <OutArgument x:TypeArguments="sd:DataTable">[TransactionData]</OutArgument>
+              <OutArgument x:TypeArguments="sd2:DataTable">[TransactionData]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[TransactionData.AsEnumerable.Where(Function (row) row("COSTE LIBERADO").ToString.Trim.ToUpper.Equals("N")).
+              <InArgument x:TypeArguments="sd2:DataTable" xml:space="preserve">[TransactionData.AsEnumerable.Where(Function (row) row("COSTE LIBERADO").ToString.Trim.ToUpper.Equals("N")).
 		Select(Function (row) row).CopyToDataTable]</InArgument>
             </Assign.Value>
           </Assign>
@@ -193,10 +254,10 @@
           </sap:WorkflowViewStateService.ViewState>
           <Assign DisplayName="Assign - initialize data table" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
-              <OutArgument x:TypeArguments="sd:DataTable">[TransactionData]</OutArgument>
+              <OutArgument x:TypeArguments="sd2:DataTable">[TransactionData]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="sd:DataTable">[New System.Data.DataTable]</InArgument>
+              <InArgument x:TypeArguments="sd2:DataTable">[New System.Data.DataTable]</InArgument>
             </Assign.Value>
           </Assign>
         </Sequence>

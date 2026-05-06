@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="2XOIOiioDEKsYsTZPX6yvg" Reference="QIwDNHBmYkWUle_j6tfhqw/BdZm843GbEeU8cHx7qLD0A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="-8, -8, 1936, 1048" ContentHash="AiYD8E6ql0q2Y4CGLKGe8A" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAULSURBVFhH7ZRrbFNlGMf32Rhj/ARtgY1gBDcTE03QEO8i3gURERVBFEHxggp4QRzKgIHihjdC+GAUdICOi7BBN0RQkMkuXXfp6Lqu99vug8EusPMz79vT09OukpDtI0/yJE1Pen7/5/e8b9PSrtbVUoujo7L5c5SiHB3F4B+iR8u+dMQg++IRAwMlBtelUsO85N+OSAmwhB+NgUdL6MVSAwOlBvpLDMpAiZE+s5G+w6bpyb8fdunAykXZAm5koNRIf4lR6Vfh/WaTCNDZe2hcevI7hlViYqm6VJtaUeH0l5joM5uUXrOJ3sMmLhwao1w4NIbzssfSUzRWOV88jp7idM4VjePcwXTOHkhXzh5Ip1v07xl0yR5P5/4MpWPf+OxkfpqACs19JYaoZrMhCjQLiICaJLCneCwXjk1msDkXgj9AYBv4t4L/O/B9A9588GwCz0ZwrQNXDjR/Bk2fQNPH4PiAvrLpJPPTzhUZaN07msge0QYlUmggXGhUInuMSrjQROg3oxLeN4Hz5fNRfFvAlw/uDeBeD6614FoDzZ9HYc3ZKnAlOD6UUBzLofF9sL8L9qVDA/RYl0G7GdqKoe0gtO6H1r0Q+RUiuyBcAKGfILAVPF+CO1c3oQp2ZoPzUxX8kQpeAY5l0PieBGN/G84sGRqAyM7oywNbVJ3fgm9zdFLvV1Go0OrZAC791OrEAuxUNTeJqVOB34Izb0DD4hQB/AL8PfgF+GsVnAdedZ+pdDtXJ4Kl7hXQqNf9jgpeAg2vQ8NrYHs1VQD1EImpNfAXKjxJtwSLqVeBcyU0xXQvj06t7jkRvAgaFkL9K1D/cooAMd3yBKu6BVhOnRPXrQfr99wowHrdb0KD0L0IbHEw9fOgbm6KAPo9D9Et9vw/uuXpTtqzBC8GW1Q39QtU8EtQ+wLUzkkRQOpWwW6hO3at9GDdtUres12Adbo18Hwd+HmoeQ5qZqUIkLxnqVuAV0XB+j3r7rME6/es6VbBdS/qwM+C9RmonpEiwJA9p7jPYs8Jui+z51oVXDsnDrY+DdXTwfJEPECo9WxeuLWbkOiWLoItXQQinbL94Q58oQ68oXY8wXY8gTbaXUWq7uQ9C7CYeq62Z2png3VWHFz9JFgeB8ujugAtXVxJOb0tUd22FHuWusXEMfBMqRtLHEzVw1D5UDyAmPRKyuGOxHXXxcBiav2eZ4J1BlQ/JXVjeUwDU/kgVNwfDyD06qu7f5Bp+8LcsTvI5J1Bbt/hZ0lpi/bc3hxOuM9R3boDlqy76hGomgaVUyWYivug/O54AHegLSGAqOyyTpYeb2PCNg835DnJ2urSntmagol71usWU8d0V8V0T4XKB1TwPVB+F5RPiQdw+loT4LHKPdXB9ZucGPOc3Li5Sfu+rjGg6p4t7/MQ3Ro4rpuKe+XUnJ4Cp++k23xbPIDDE0kAi1r/TwfXbXSw7kQ7CwoDZGy0a8+sZ3yEdt+khHZPJLhrIoGdoifJ9hdMUnwFNyu+gkx8v2Ti/TkTj+ws3DuycG/PUtzbb8H5Y+ZqLYDdFU6ArzvZzrW5DnL+iq5m6YEgt+oMWGzeoX8iwymbM6i9fO3fbVyz1k7O8cRz0dk7qH2urHOPbIA6R0B7+cL9IdYcS30mYnW6xjWyAax2XzLjslVW7RzZAJYGbzLjsnWyqmlkA1TWuPMrat2U17ql3n+topspq27mlMUpW0BjfaLSkZ/8juHUfz4afEVL8T2MAAAAAElFTkSuQmCC" Reference="QIwDNHBmYkWUle_j6tfhqw/BdZm843GbEeU8cHx7qLD0A" Selector="&lt;wnd app='explorer.exe' cls='CabinetWClass' title='*Explorador de archivos' /&gt;" Version="V2">
+      <TargetApp.Arguments>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.Arguments>
+      <TargetApp.FilePath>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.FilePath>
+      <TargetApp.WorkingDirectory>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.WorkingDirectory>
+      <imageRef attrName="InformativeScreenshot" originalValue="db2e02ca603751a41536b465a94d1c77.png" xmlns="">0zRrWWxsjGkqK0XK-0RuscA</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

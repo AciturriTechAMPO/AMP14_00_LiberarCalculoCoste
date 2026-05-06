@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Explorador de archivos",
+  "Type": "App",
+  "Id": "mhs98R-c1UmH8eFFWJlmMw",
+  "Reference": "QIwDNHBmYkWUle_j6tfhqw/mhs98R-c1UmH8eFFWJlmMw",
+  "Created": "2026-05-06T01:48:17.8715631Z",
+  "Updated": "2026-05-06T01:48:17.8715631Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
