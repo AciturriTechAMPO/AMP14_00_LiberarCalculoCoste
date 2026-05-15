@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Automate cost calculation release using keyboard shortcuts",
+  "Type": "Element",
+  "Id": "6Hb6yK5lJ0WNcq3K6ClUhg",
+  "Reference": "QIwDNHBmYkWUle_j6tfhqw/6Hb6yK5lJ0WNcq3K6ClUhg",
+  "ParentRef": "QIwDNHBmYkWUle_j6tfhqw/SQV4EnrV8kaiZafeRzfvEg",
+  "Created": "2026-05-15T03:18:10.8749615Z",
+  "Updated": "2026-05-15T03:18:10.8749615Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

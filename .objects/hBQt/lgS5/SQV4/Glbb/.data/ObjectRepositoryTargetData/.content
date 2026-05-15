@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="9UdH367G20e57esuOxUmpg" Reference="QIwDNHBmYkWUle_j6tfhqw/Glbb2UxJZ0-_BFWXSBnl_w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="207, 555, 265, 20" ElementType="DropDown" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subALL*SAP*/tabsREITER/tabpKOST/ssubKOST*/*SICHT' text='Total Coste' tooltip='Vista de elementos' type='GuiComboBox' /&gt;" Guid="ffe740fd-991d-4479-baff-b1901913a2a3" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]">
+      <imageRef attrName="InformativeScreenshot" originalValue="5b8d382b6692af45d3d08614f473d0c5.png" xmlns="">0-bnH5mQaAkW7_AraaVqhlQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

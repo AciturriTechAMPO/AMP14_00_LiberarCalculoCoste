@@ -108,20 +108,20 @@
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_EnterMaterialData" sap:VirtualizedContainerService.HintSize="1281,2559" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_EnterMaterialData" sap:VirtualizedContainerService.HintSize="1250,2975" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="503,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicia ingresar datos de materiales en SAP Logon&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Crear CC lista materiales para pedido" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="503,2195" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="7968a9ae-734c-4ec6-9019-37f0347bd29c" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V2">
+    <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="504,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Inicia ingresar datos de materiales en SAP Logon&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Crear CC lista materiales para pedido" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="504,2611" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="7968a9ae-734c-4ec6-9019-37f0347bd29c" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Automate SAP cost calculation release by entering data and confirming" sap:VirtualizedContainerService.HintSize="501,2044" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Automate SAP cost calculation release by entering data and confirming" sap:VirtualizedContainerService.HintSize="502,2460" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="CostContainerAppeared" />
             </Sequence.Variables>
@@ -130,53 +130,68 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type commercial document number in SAP" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="467,246" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="7968a9ae-734c-4ec6-9019-37f0347bd29c" Text="[TransactionItem(&quot;PEDIDO&quot;).ToString.Trim]" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type commercial document number in SAP" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="468,246" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="7968a9ae-734c-4ec6-9019-37f0347bd29c" Text="[TransactionItem(&quot;PEDIDO&quot;).ToString.Trim]" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="s9c4baPiSEWz8rO-newulA" DesignTimeRectangle="144, 159, 76, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subALL:SAPLCKDI:*/subKOPF:SAPLCKDI:*/ctxtCKI64A-VBELN' tooltip='Número de documento comercial' type='GuiCTextField' /&gt;" Guid="02c6fcca-ee49-4bd6-901f-1a01520838fa" InformativeScreenshot="9ebac93f4368a2eea82e582e868a66c2.png" Reference="QIwDNHBmYkWUle_j6tfhqw/cLGh0B_ShkuhFLkxEB1SUw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type into SAP position number field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="467,246" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="SameAsCard" ScopeIdentifier="7968a9ae-734c-4ec6-9019-37f0347bd29c" Text="[TransactionItem(&quot;POSICION&quot;).ToString.Trim]" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type into SAP position number field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="468,246" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="SameAsCard" ScopeIdentifier="7968a9ae-734c-4ec6-9019-37f0347bd29c" Text="[TransactionItem(&quot;POSICION&quot;).ToString.Trim]" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="EDEbko2-OECjLrwh0V_p4w" DesignTimeRectangle="543, 159, 48, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subALL:SAPLCKDI:*/subKOPF:SAPLCKDI:*/txtCKI64A-POSNR' tooltip='Número de posición del documento comercial' type='GuiTextField' /&gt;" Guid="044db802-fe0b-40b3-a3fc-b5a0315595f5" InformativeScreenshot="49fd6b74ab79f0df50be22ce3b8b13f1.png" Reference="QIwDNHBmYkWUle_j6tfhqw/yaGKMc8rLE-opyvqcdMYUA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type cost calculation variant into SAP" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="467,246" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="SameAsCard" ScopeIdentifier="7968a9ae-734c-4ec6-9019-37f0347bd29c" Text="[in_VarianteCalculoCoste]" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type cost calculation variant into SAP" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="468,246" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="SameAsCard" ScopeIdentifier="7968a9ae-734c-4ec6-9019-37f0347bd29c" Text="[in_VarianteCalculoCoste]" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="wdGGSEToPE6l0oVo_MnSBQ" DesignTimeRectangle="179, 291, 34, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subALL:SAPLCKDI:*/tabsREITER/tabpALLG/ssubALLGEMEIN:SAPLCKDI:*/ctxtCKI64A-KLVAR' tooltip='Variante cálc.coste' type='GuiCTextField' /&gt;" Guid="24b7384c-2945-4ae2-bc1b-8ec59cfa64de" InformativeScreenshot="ac1c140ff2f4a9813585743bf6bf74ca.png" Reference="QIwDNHBmYkWUle_j6tfhqw/zsE2L1vB9Eq4ZgH78Nlwrw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type a value into the transfer control field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="467,246" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="SameAsCard" ScopeIdentifier="7968a9ae-734c-4ec6-9019-37f0347bd29c" Text="[in_ControlTraspaso]" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type a value into the transfer control field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="468,246" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="SameAsCard" ScopeIdentifier="7968a9ae-734c-4ec6-9019-37f0347bd29c" Text="[in_ControlTraspaso]" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="dUczNMpvG0KgQnWXKdTx9Q" DesignTimeRectangle="179, 335, 34, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subALL:SAPLCKDI:*/tabsREITER/tabpALLG/ssubALLGEMEIN:SAPLCKDI:*/ctxtCKI64A-UEBID' tooltip='Control de traspaso' type='GuiCTextField' /&gt;" Guid="0746ae48-6349-4de4-97ae-8b80341b9457" InformativeScreenshot="720215675cbe321769bea7fe5deb68f0.png" Reference="QIwDNHBmYkWUle_j6tfhqw/katmp7BmT0K5KMHYGKNH3Q" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type material number into SAP application" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="467,246" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="SameAsCard" ScopeIdentifier="7968a9ae-734c-4ec6-9019-37f0347bd29c" Text="[TransactionItem(&quot;MATERIAL&quot;).ToString.Trim]" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type material number into SAP application" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="468,246" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="SameAsCard" ScopeIdentifier="7968a9ae-734c-4ec6-9019-37f0347bd29c" Text="[TransactionItem(&quot;MATERIAL&quot;).ToString.Trim]" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="8XL4212luEyUNqsG2lnk5A" DesignTimeRectangle="144, 181, 202, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subALL:SAPLCKDI:*/subKOPF:SAPLCKDI:*/ctxtCKI64A-MATNR' tooltip='Número de material' type='GuiCTextField' /&gt;" Guid="e35b2c60-1ba0-45a8-9e26-2a7ee932d221" InformativeScreenshot="563d608c2d2edddf72f42749d43e7848.png" Reference="QIwDNHBmYkWUle_j6tfhqw/aeK2tCelQkqVQzreWK4vOw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]" />
               </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type 'CENTRO' value into SAP 'Centro' field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="467,246" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="SameAsCard" ScopeIdentifier="7968a9ae-734c-4ec6-9019-37f0347bd29c" Text="[TransactionItem(&quot;CENTRO&quot;).ToString.Trim]" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type 'CENTRO' value into SAP 'Centro' field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="468,246" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="SameAsCard" ScopeIdentifier="7968a9ae-734c-4ec6-9019-37f0347bd29c" Text="[TransactionItem(&quot;CENTRO&quot;).ToString.Trim]" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable ContentHash="z4KQ10lP6ECKrpLEGtiNAw" DesignTimeRectangle="144, 203, 34, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subALL:SAPLCKDI:*/subKOPF:SAPLCKDI:*/ctxtCK*-WERKS' tooltip='Centro' type='GuiCTextField' /&gt;" Guid="e5637007-73ec-4cb5-8ff9-26cc10ed70b3" InformativeScreenshot="1a4777ee8ef33ac2a04b7cdbb0834d6c.png" Reference="QIwDNHBmYkWUle_j6tfhqw/qxKJxwnSMEmYJgHcSo4-Kg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]" />
               </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Automate cost calculation release in SAP" sap:VirtualizedContainerService.HintSize="467,508" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="30">
+            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Automate cost calculation release in SAP" sap:VirtualizedContainerService.HintSize="468,924" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="30">
               <ui:InterruptibleDoWhile.Body>
-                <Sequence DisplayName="Automate cost calculation release in SAP" sap:VirtualizedContainerService.HintSize="450,386" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Automate cost calculation release in SAP" sap:VirtualizedContainerService.HintSize="466,802" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Automate cost calculation release using keyboard shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="HardwareEvents" ScopeIdentifier="7968a9ae-734c-4ec6-9019-37f0347bd29c" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V5">
+                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="[UiPath.UIAutomationNext.Enums.NClickMode.None]" ContinueOnError="True" DisplayName="Automate cost calculation release using keyboard shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="432,473" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="SameAsCard" ScopeIdentifier="7968a9ae-734c-4ec6-9019-37f0347bd29c" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Timeout="3" Version="V5">
+                    <uix:NKeyboardShortcuts.Target>
+                      <uix:TargetAnchorable ContentHash="IbVme-X3_EioHwBlVQvlIg" DesignTimeRectangle="27, 249, 93, 22" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subALL*SAP*/*/*' text='Datos CC' type='GuiTab' /&gt;" Guid="2f9730c2-933e-42cb-bb2b-923269ba63d5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGEAAAAaCAYAAACn4zKhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOZSURBVGhD7ZfbThpBGID3UYhvwJ03vILRG/EBTBsT2/SiJlgSm2hoTYrR2hopeMJTFTVWYqoRbGtraw9pK6mHipxBVHqyB3v7NzM4sDM7LLuA0oS9+ALMDP/M/N/M7KzwN/UNNMqLwBZoXDxlkbDeY4elphZYuny98mhqwfNHefgeT+LPC5NwevwVfh+m4EO/Ew8m4fbCsWe94kgur8G66RaEn7yAk8Qh/Eoen7+EP0dfJAKSbg9ERucgZJ+sOMKD07DnmISVqzcgFY5hEecqASUfgWwTAQcLKxCyTUCwf7xiiY3P41xEd/2QisTPTwIR8PPgKHsEzT6GYN8oBO47K5rIkAvnI/RpB45D0fORgJKPjiG01TICXIsQvDcMgd6hiifseIhzEvi4BQf+YOklEAE/EsmMgPi0G3e+3+2QYjaCXhBAENFwidNOggXMuiowm9ny4vHWVVHj0ddZFNUpJWSfSEvwbUH8835pJRAB6OpFBMRGZ2G/60FuWutBLxhggPotgL62Q9qWoiMtoZUtLw5vLUqyaDxdV6BBVw/ePHVsHDlCtjGcm+137yG6s1c6CTwBUecM+K02eUxnEsRljYb0ZK028NQwK6+mHfzWdjDr6N0j6OrBk4lHyqvAbMrGHahm47DjaQYj8x9ldeoI9o3g/Pg23mIRJZFQsAAET0KuCeO2pByJYNuk5Rgbz34jmUSO+Lu1Gcw8CdyxKKhTCZGwsfIMXG2W4iVwBQxPSzrOCXdyTDKpchkJKFYm0QiRTEpCDuTayNWpBF1QUJ7G2zpgubOnOAk8AZERl6RTWbgS6J1AH0kyEiSJEsukjzCpYPoYVFWnEnRJQblyd3bD7upa4RK4AoamJB3mhSdBPGFq8gp2AhWLf6xhqdxVzW+fv04dRMJz1zz45hYLl1ASAQg2cWcPVrJSccKqm0V12USgBy29onM/Ezw1hmwCUTmJyZDedYzITIzcdWwcOYiE1cGxwiSQHXAYCMNTkwUHCzsmJR0phrrN8I4KtALJDcgARvHqF/+XezsSJQzvKE45B/ZGJh6PXJ1S0LsCluBwgm/GrU4C7wgqSkCFQiR47U7YdC2ok8AKQG9+bAca+aEkTD1SJ+H75rYmoASgt2ZKwkkkBq9u38WF+fBea4M3N+/g1242sIZykISXLe2ZvApIwGuTBZ/tSmGDaqgDSRDnU0Am2CRrXCxYgkZ5ETZ7B+E0nNAoI5qE/4B/P7fJStxm1j8AAAAASUVORK5CYII=" InformativeScreenshot="3522329b66f39fad8168512129ab2558.png" Reference="QIwDNHBmYkWUle_j6tfhqw/6Hb6yK5lJ0WNcq3K6ClUhg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector, Image" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Interactive]" />
+                    </uix:NKeyboardShortcuts.Target>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NKeyboardShortcuts>
-                  <uix:NCheckState DisplayName="Wait for cost container in SAP" EnableIfExists="False" EnableIfNotExists="False" Exists="[CostContainerAppeared]" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,269" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="7968a9ae-734c-4ec6-9019-37f0347bd29c" Timeout="[If(CDbl(Config(&quot;SAP_TimeoutShort&quot;)) &gt; 6,&#xD;&#xA;&#x9;&#x9;Math.Round(CDbl(Config(&quot;SAP_TimeoutShort&quot;))/2),&#xD;&#xA;&#x9;&#x9;CDbl(Config(&quot;SAP_TimeoutShort&quot;)))]" Version="V5">
+                  <uix:NCheckState DisplayName="Wait for cost container in SAP" EnableIfExists="False" EnableIfNotExists="False" Exists="[CostContainerAppeared]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="432,269" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="7968a9ae-734c-4ec6-9019-37f0347bd29c" Timeout="[If(CDbl(Config(&quot;SAP_TimeoutShort&quot;)) &gt; 6,&#xA;&#x9;&#x9;Math.Round(CDbl(Config(&quot;SAP_TimeoutShort&quot;))/2),&#xA;&#x9;&#x9;CDbl(Config(&quot;SAP_TimeoutShort&quot;)))]" Version="V5">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
@@ -196,7 +211,7 @@
                       </Sequence>
                     </uix:NCheckState.IfNotExists>
                     <uix:NCheckState.Target>
-                      <uix:TargetAnchorable ContentHash="uR3w1AmVdU--zgwHZwlCyA" DesignTimeRectangle="207, 335, 552, 307" ElementVisibilityArgument="[UiPath.UIAutomationNext.Enums.NElementVisibility.Interactive]" FullSelectorArgument="&lt;sap id='usr/subALL:SAPLCKDI:*/tabsREITER/tabpKOST/ssubKOST:SAPLCKDI:*/txtH_AMPEL' tooltip='Semáf*' type='GuiTextField' /&gt;" Guid="45863894-ad20-4e7c-abe5-dfa44cbdb237" InformativeScreenshot="88a12e641eec8cb03afc7c1bc087f331.png" Reference="QIwDNHBmYkWUle_j6tfhqw/Fcn3OY3xTkSVcvsOpj90Sg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]" />
+                      <uix:TargetAnchorable ContentHash="uR3w1AmVdU--zgwHZwlCyA" DesignTimeRectangle="207, 335, 552, 307" ElementVisibilityArgument="[UiPath.UIAutomationNext.Enums.NElementVisibility.Interactive]" FullSelectorArgument="&lt;sap id='usr/subALL*SAP*/tabsREITER/tabpKOST/ssubKOST*SAP*/txtH_AMPEL' tooltip='Semáf*' type='GuiTextField' /&gt;" Guid="45863894-ad20-4e7c-abe5-dfa44cbdb237" InformativeScreenshot="88a12e641eec8cb03afc7c1bc087f331.png" Reference="QIwDNHBmYkWUle_j6tfhqw/Fcn3OY3xTkSVcvsOpj90Sg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Crear CC lista materiales para pedido' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]" />
                     </uix:NCheckState.Target>
                   </uix:NCheckState>
                 </Sequence>
@@ -204,6 +219,12 @@
               <ui:InterruptibleDoWhile.Condition>
                 <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="Not CostContainerAppeared" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
               </ui:InterruptibleDoWhile.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:InterruptibleDoWhile>
           </Sequence>
         </ActivityAction>
@@ -229,6 +250,6 @@
         </uix:TargetApp>
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="503,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finaliza ingresar datos de materiales en SAP Logon&quot;]" />
+    <ui:LogMessage DisplayName="Log Message - end" sap:VirtualizedContainerService.HintSize="504,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finaliza ingresar datos de materiales en SAP Logon&quot;]" />
   </Sequence>
 </Activity>

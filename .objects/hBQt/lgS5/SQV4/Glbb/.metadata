@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Total Coste",
+  "Type": "Element",
+  "TaxonomyType": "Dropdown",
+  "Id": "Glbb2UxJZ0-_BFWXSBnl_w",
+  "Reference": "QIwDNHBmYkWUle_j6tfhqw/Glbb2UxJZ0-_BFWXSBnl_w",
+  "ParentRef": "QIwDNHBmYkWUle_j6tfhqw/SQV4EnrV8kaiZafeRzfvEg",
+  "Created": "2026-05-15T04:12:44.7375581Z",
+  "Updated": "2026-05-15T04:12:44.7375581Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

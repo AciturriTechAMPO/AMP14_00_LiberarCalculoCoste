@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Datos CC",
+  "Type": "Element",
+  "Id": "H6S7olhe-U2PVhzrXxnOYA",
+  "Reference": "QIwDNHBmYkWUle_j6tfhqw/H6S7olhe-U2PVhzrXxnOYA",
+  "ParentRef": "QIwDNHBmYkWUle_j6tfhqw/SQV4EnrV8kaiZafeRzfvEg",
+  "Created": "2026-05-15T03:38:15.8457696Z",
+  "Updated": "2026-05-15T03:38:15.8457696Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
