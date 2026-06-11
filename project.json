@@ -13,7 +13,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "26.0.180.0",
-  "projectVersion": "1.0.3",
+  "projectVersion": "1.0.4",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -74,6 +74,13 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Tests\\Apps\\SAP\\TestCase_SAP_Logout.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "fb6a519b-488e-46b8-8598-b530e319af1c",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TestCase_InitAllApplications.xaml"
       }
     ],
     "saveToCloud": false
