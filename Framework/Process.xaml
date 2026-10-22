@@ -91,97 +91,127 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="662,1922" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1163,2338" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Iterate through cost variants for calculation" sap:VirtualizedContainerService.HintSize="488,1647" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Split(Config(&quot;VarianteCostoTraspaso&quot;).ToString.Trim,&quot;;&quot;)]">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="524,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Iterate through cost variants for calculation" sap:VirtualizedContainerService.HintSize="524,2063" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Split(Config(&quot;VarianteCostoTraspaso&quot;).ToString.Trim,&quot;;&quot;)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="CosteTraspaso" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,1525" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,328" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="GreenLight" />
               <Variable x:TypeArguments="x:String" Name="LogMessage" />
+              <Variable x:TypeArguments="x:Boolean" Name="MaterialNotExist" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_EnterMaterialData - Invoke Workflow File (Apps\SAP\SAP_EnterMaterialData.xaml)" sap:VirtualizedContainerService.HintSize="452,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_EnterMaterialData.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_EnterMaterialData - Invoke Workflow File (Apps\SAP\SAP_EnterMaterialData.xaml)" sap:VirtualizedContainerService.HintSize="452,95" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_EnterMaterialData.xaml">
               <ui:InvokeWorkflowFile.Arguments>
+                <OutArgument x:TypeArguments="x:Boolean" x:Key="out_MaterialNotExist">[MaterialNotExist]</OutArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_ControlTraspaso">[Split(CosteTraspaso,"|")(1).Trim]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_VarianteCalculoCoste">[Split(CosteTraspaso,"|")(0).Trim]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_ValidateLights - Invoke Workflow File (Apps\SAP\SAP_ValidateLights.xaml)" sap:VirtualizedContainerService.HintSize="452,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_ValidateLights.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_LogMessage">[LogMessage]</OutArgument>
-                <OutArgument x:TypeArguments="x:Boolean" x:Key="out_GreenLight">[GreenLight]</OutArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-            <If Condition="[GreenLight]" DisplayName="Update comments based on GreenLight status" sap:VirtualizedContainerService.HintSize="452,1111" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeWorkflowFile>
+            <If Condition="[Not MaterialNotExist]" DisplayName="If there is not error messgge" sap:VirtualizedContainerService.HintSize="488,1704" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,403" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,1348" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_MarcarCoste - Invoke Workflow File (Apps\SAP\SAP_MarcarCoste.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_MarcarCoste.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_ValidateLights - Invoke Workflow File (Apps\SAP\SAP_ValidateLights.xaml)" sap:VirtualizedContainerService.HintSize="452,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_ValidateLights.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_LogMessage">[LogMessage]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_GreenLight">[GreenLight]</OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <Assign DisplayName="Assigns conditional comments for cost calculation release" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_2">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Object">[TransactionItem("COMENTARIOS")]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Object">["OK"]</InArgument>
-                    </Assign.Value>
-                  </Assign>
+                  <If Condition="[GreenLight]" DisplayName="Update comments based on GreenLight status" sap:VirtualizedContainerService.HintSize="452,1111" sap2010:WorkflowViewState.IdRef="If_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,403" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_MarcarCoste - Invoke Workflow File (Apps\SAP\SAP_MarcarCoste.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_MarcarCoste.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                        <Assign DisplayName="Assigns conditional comments for cost calculation release" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Object">[TransactionItem("COMENTARIOS")]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Object">["OK"]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,578" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Assigns conditional comments for cost calculation release" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_4">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Object">[TransactionItem("COMENTARIOS")]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Object" xml:space="preserve">[If(String.IsNullOrEmpty(TransactionItem("COMENTARIOS").ToString.Trim),
+		"Semaforo rojo para Variante cálc. coste: "+Split(CosteTraspaso,"|")(0).Trim+", y Control de paso: "+Split(CosteTraspaso,"|")(0).Trim+", Mensaje: "+LogMessage,
+		TransactionItem("COMENTARIOS").ToString.Trim+
+					vbNewLine+"Semaforo rojo para Variante cálc. coste: "+Split(CosteTraspaso,"|")(0).Trim+", y Control de paso: "+Split(CosteTraspaso,"|")(0).Trim+", Mensaje: "+LogMessage
+)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:LogMessage DisplayName="Logs red semaphore status for cost calculation variant" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Semaforo rojo para Variante cálc. coste: &quot;+Split(CosteTraspaso,&quot;|&quot;)(0).Trim+&quot;, y Control de paso: &quot;+Split(CosteTraspaso,&quot;|&quot;)(0).Trim+&quot;, Mensaje: &quot;+LogMessage]" />
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_GoBackTransaction - Invoke Workflow File (Apps\SAP\SAP_GoBackTransaction.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_GoBackTransaction.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                      </Sequence>
+                    </If.Else>
+                  </If>
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,578" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,226" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Assigns conditional comments for cost calculation release" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_1">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Object">[TransactionItem("COMENTARIOS")]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Object" xml:space="preserve">[If(String.IsNullOrEmpty(TransactionItem("COMENTARIOS").ToString.Trim),
-		"Semaforo rojo para Variante cálc. coste: "+Split(CosteTraspaso,"|")(0).Trim+", y Control de paso: "+Split(CosteTraspaso,"|")(0).Trim+", Mensaje: "+LogMessage,
-		TransactionItem("COMENTARIOS").ToString.Trim+
-					vbNewLine+"Semaforo rojo para Variante cálc. coste: "+Split(CosteTraspaso,"|")(0).Trim+", y Control de paso: "+Split(CosteTraspaso,"|")(0).Trim+", Mensaje: "+LogMessage
-)]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <ui:LogMessage DisplayName="Logs red semaphore status for cost calculation variant" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Semaforo rojo para Variante cálc. coste: &quot;+Split(CosteTraspaso,&quot;|&quot;)(0).Trim+&quot;, y Control de paso: &quot;+Split(CosteTraspaso,&quot;|&quot;)(0).Trim+&quot;, Mensaje: &quot;+LogMessage]" />
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_GoBackTransaction - Invoke Workflow File (Apps\SAP\SAP_GoBackTransaction.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_GoBackTransaction.xaml">
-                    <ui:InvokeWorkflowFile.Arguments>
-                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
-                    </ui:InvokeWorkflowFile.Arguments>
-                  </ui:InvokeWorkflowFile>
+                  <ui:LogMessage DisplayName="Log warning for material not updated" sap:VirtualizedContainerService.HintSize="452,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[String.Format(&quot;Material {0} en el centro {1} no actualizado&quot;,TransactionItem(&quot;MATERIAL&quot;).ToString.Trim,TransactionItem(&quot;CENTRO&quot;).ToString.Trim)+vbNewLine+&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;Por tal motivo, no se puede procesar la variante, favor de revisar, Pedido: &quot;+&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;TransactionItem(&quot;PEDIDO&quot;).ToString.Trim+&quot;, &quot;+&quot;Posición:&quot;+TransactionItem(&quot;POSICION&quot;).ToString.Trim]" />
                 </Sequence>
               </If.Else>
             </If>
