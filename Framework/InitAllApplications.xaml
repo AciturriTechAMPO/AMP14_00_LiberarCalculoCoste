@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="396,292" sap2010:WorkflowViewState.IdRef="Initialization_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="396,292" sap2010:WorkflowViewState.IdRef="Initialization_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umae="clr-namespace:UiPath.Mail.Activities.Enums;assembly=UiPath.Mail.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.Mail.Activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>Microsoft.VisualBasic</x:String>
@@ -46,6 +46,13 @@
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Dynamic</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Activities.Enums</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -115,9 +122,16 @@
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1163,1697" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1163,2532" sap2010:WorkflowViewState.IdRef="Sequence_9">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="CurrentDate" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -125,23 +139,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Opening applications...&quot;]" />
-    <Sequence DisplayName="Open folder, run 'attrib' command, then close File Explorer." sap:VirtualizedContainerService.HintSize="478,57" sap2010:WorkflowViewState.IdRef="Sequence_13">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="x:String" Name="VM_User" />
-        <Variable x:TypeArguments="ss:SecureString" Name="VM_Passw" />
-      </Sequence.Variables>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[Config(&quot;VM_MachingUser&quot;).ToString.Trim]" CacheStrategy="None" DisplayName="Get Credential" FolderPath="[Config(&quot;OrchestratorQueueFolder&quot;).ToString.Trim]" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[VM_Passw]" Username="[VM_User]" />
-      <ui:StartProcess WorkingDirectory="{x:Null}" Arguments="/c start &quot;&quot; &quot;C:\Program Files\Microsoft OneDrive\OneDrive.exe&quot;&quot;" DisplayName="Open a folder using OneDrive.exe" FileName="cmd.exe" sap:VirtualizedContainerService.HintSize="416,120" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
-      <Delay DisplayName="Delay workflow execution for 8 seconds" Duration="00:00:10" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="Delay_2" />
-      <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="OnlyCurrentUser" DisplayName="Kill explorer.exe process" sap:VirtualizedContainerService.HintSize="416,158" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="explorer.exe" />
-    </Sequence>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_Login - Invoke Workflow File (Apps\SAP\SAP_Login.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_Login.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_Login - Invoke Workflow File (Apps\SAP\SAP_Login.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_Login.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
@@ -152,6 +150,113 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="&#xA;' Inicializar resultado&#xA;out_FechaActual = False&#xA;&#xA;' Configuracion de reintentos&#xA;Dim maxIntentos As Integer = 10&#xA;Dim esperaSegundos As Integer = 30&#xA;&#xA;' Expandir variables de entorno de Windows&#xA;Dim carpeta As String = System.Environment.ExpandEnvironmentVariables(in_RutaCarpeta)&#xA;&#xA;For intento As Integer = 1 To maxIntentos&#xA;&#xA;    Try&#xA;        If System.IO.Directory.Exists(carpeta) Then&#xA;&#xA;            Dim archivos As String() = System.IO.Directory.GetFiles(&#xA;                carpeta,&#xA;                in_NombreArchivo,&#xA;                System.IO.SearchOption.TopDirectoryOnly&#xA;            )&#xA;&#xA;            If archivos.Length &gt; 0 Then&#xA;&#xA;                Dim archivo As String = archivos(0)&#xA;&#xA;                ' Consultar atributos del archivo&#xA;                Dim atributos As Integer = CInt(System.IO.File.GetAttributes(archivo))&#xA;&#xA;                ' Comprobar atributos de nube del BAT original&#xA;                Dim soloNube As Boolean =&#xA;                    ((atributos And &amp;H400000) &lt;&gt; 0) OrElse&#xA;                    ((atributos And &amp;H1000) &lt;&gt; 0)&#xA;&#xA;                If Not soloNube Then&#xA;&#xA;                    ' Obtener fecha de ultima modificacion&#xA;                    Dim fechaModificacion As DateTime =&#xA;                        System.IO.File.GetLastWriteTime(archivo)&#xA;&#xA;                    ' Comparar fecha sin tener en cuenta la hora&#xA;                    If fechaModificacion.Date = DateTime.Today Then&#xA;                        out_FechaActual = True&#xA;                        Exit For&#xA;                    End If&#xA;&#xA;                End If&#xA;            End If&#xA;        End If&#xA;&#xA;    Catch ex As Exception&#xA;        ' Error temporal: continuar con el siguiente intento&#xA;    End Try&#xA;&#xA;    ' Esperar solo si quedan intentos&#xA;    If intento &lt; maxIntentos Then&#xA;        System.Threading.Thread.Sleep(esperaSegundos * 1000)&#xA;    End If&#xA;&#xA;Next" DisplayName="Invoke code for calculation cost release" sap:VirtualizedContainerService.HintSize="478,197" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_RutaCarpeta">[Path.GetDirectoryName(Config("InitialInpuPath").ToString.Trim)]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_NombreArchivo">[Path.GetFileName(Config("InitialInpuPath").ToString.Trim)]</InArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_FechaActual">[CurrentDate]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <If Condition="[Not CurrentDate]" DisplayName="Validate date and handle OneDrive sync errors" sap:VirtualizedContainerService.HintSize="478,695" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,531" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="User" />
+            <Variable x:TypeArguments="ss:SecureString" Name="Password" />
+            <Variable x:TypeArguments="x:String" Name="BodyHtml" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[Config(&quot;EmailSender&quot;).ToString.Trim]" CacheStrategy="None" DisplayName="Get Credential - email account" FolderPath="[Config(&quot;OrchestratorQueueFolder&quot;).ToString.Trim]" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Password]" Username="[User]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:GetRobotCredential>
+          <ui:ReadTextFile File="{x:Null}" Content="[BodyHtml]" DisplayName="Read Text File - HTML body system exception" FileName="[Path.Combine(System.Environment.CurrentDirectory,&quot;Data\Templates\BodyTemplateAmpo.html&quot;)]" sap:VirtualizedContainerService.HintSize="416,124" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+          <TryCatch DisplayName="Try Catch - notify by system exception" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <TryCatch.Try>
+              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" ResourceAttachmentList="{x:Null}" ResourceAttachments="{x:Null}" Result="{x:Null}" UseOAuth="{x:Null}" AttachmentInputMode="FilePaths" Body="[BodyHtml.Replace(&quot;@Message&quot;,&quot;No fue posible iniciar el proceso de Liberar Cálculo Coste porque One Drive no se ha sincronizado, por favor revisar.&quot;)]" ConnectionMode="LegacyConfiguration" DisplayName="Send SMTP Email - notify by system exception" Email="[User]" EnableSSL="True" From="[User]" sap:VirtualizedContainerService.HintSize="450,299" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Name="Bot R14 Liberar Cálculo Coste" Port="[CInt(Config(&quot;SmtpPort&quot;))]" SecureConnection="Auto" SecurePassword="[Password]" Server="[Config(&quot;SmtpEmailserver&quot;).ToString.Trim]" Subject="Liberar Cálculo Coste Error" TimeoutMS="60000" To="[Config(&quot;EmailTo&quot;).ToString.Trim]" UseISConnection="False" UseRichTextEditor="True">
+                <ui:SendMail.AttachmentsBackup>
+                  <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="FilePaths">
+                    <usau:BackupSlot.BackupValues>
+                      <scg:List x:TypeArguments="x:Object" x:Key="Existing" Capacity="1">
+                        <x:Null />
+                      </scg:List>
+                      <scg:List x:TypeArguments="x:Object" x:Key="FilePaths" Capacity="2">
+                        <x:Null />
+                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                      </scg:List>
+                    </usau:BackupSlot.BackupValues>
+                  </usau:BackupSlot>
+                </ui:SendMail.AttachmentsBackup>
+                <ui:SendMail.ConnectionDetailsBackupSlot>
+                  <usau:BackupSlot x:TypeArguments="umae:ConnectionDetails" StoredValue="LegacyConfiguration">
+                    <usau:BackupSlot.BackupValues>
+                      <scg:List x:TypeArguments="x:Object" x:Key="IntegrationService" Capacity="1">
+                        <x:Null />
+                      </scg:List>
+                    </usau:BackupSlot.BackupValues>
+                  </usau:BackupSlot>
+                </ui:SendMail.ConnectionDetailsBackupSlot>
+                <ui:SendMail.Files>
+                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                </ui:SendMail.Files>
+              </ui:SendMail>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message - error by system exception" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Sepresentó el siguiente error notificando por proceso no exitoso: &quot;+exception.Message]" />
+                  </Sequence>
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+            <TryCatch.Finally>
+              <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </TryCatch.Finally>
+          </TryCatch>
+          <Throw DisplayName="Handle OneDrive synchronization failure by throwing exception" Exception="[New BusinessRuleException(&quot;No fue posible iniciar el proceso de Liberar Cálculo Coste porque One Drive no se ha sincronizado, por favor revisar.&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_1" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_EnterTransaction - Invoke Workflow File (Apps\SAP\SAP_EnterTransaction.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Apps\SAP\SAP_EnterTransaction.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
