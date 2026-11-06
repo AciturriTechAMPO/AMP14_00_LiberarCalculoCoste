@@ -126,9 +126,10 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1163,2532" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1186,2707" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="CurrentDate" />
     </Sequence.Variables>
@@ -293,7 +294,7 @@
         <InArgument x:TypeArguments="sd:DataTable">[TransactionData.Copy]</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[TransactionData.AsEnumerable.Any(Function (row) row(&quot;COSTE LIBERADO&quot;).ToString.Trim.ToUpper.Equals(&quot;N&quot;))]" DisplayName="If - are the transactions" sap:VirtualizedContainerService.HintSize="478,582" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[TransactionData.AsEnumerable.Any(Function (row) row(&quot;COSTE LIBERADO&quot;).ToString.Trim.ToUpper.Equals(&quot;N&quot;))]" DisplayName="If - are the transactions" sap:VirtualizedContainerService.HintSize="478,757" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -301,13 +302,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,401" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Assign - transactions to upload" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign DisplayName="Assign - transactions to upload" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="sd:DataTable">[TransactionData]</OutArgument>
             </Assign.To>
@@ -316,6 +317,7 @@
 		Select(Function (row) row).CopyToDataTable]</InArgument>
             </Assign.Value>
           </Assign>
+          <ui:LogMessage DisplayName="Log the number of transactions for processing" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;se procesaran &quot;+TransactionData.RowCount.ToString+&quot; transacciones.&quot;]" />
         </Sequence>
       </If.Then>
       <If.Else>
