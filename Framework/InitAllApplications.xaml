@@ -127,9 +127,10 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1186,2707" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1161,2707" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="CurrentDate" />
     </Sequence.Variables>
@@ -308,13 +309,13 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Assign - transactions to upload" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign DisplayName="Assign - transactions to upload" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_4">
             <Assign.To>
               <OutArgument x:TypeArguments="sd:DataTable">[TransactionData]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[TransactionData.AsEnumerable.Where(Function (row) row("COSTE LIBERADO").ToString.Trim.ToUpper.Equals("N")).
-		Select(Function (row) row).CopyToDataTable]</InArgument>
+		Take(10).CopyToDataTable]</InArgument>
             </Assign.Value>
           </Assign>
           <ui:LogMessage DisplayName="Log the number of transactions for processing" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;se procesaran &quot;+TransactionData.RowCount.ToString+&quot; transacciones.&quot;]" />

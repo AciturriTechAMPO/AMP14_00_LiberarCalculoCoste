@@ -95,9 +95,11 @@
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_GoBackTransaction" sap:VirtualizedContainerService.HintSize="1281,1161" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_GoBackTransaction" sap:VirtualizedContainerService.HintSize="1182,1161" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -117,7 +119,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts - go back" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,401" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="HardwareEvents" ScopeIdentifier="c5b66a49-c588-4c57-95b4-e89343f0fa1f" Shortcuts="[d(hk)][k(F3)][u(hk)]" Version="V5" />
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'No' button to release cost calculation" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c5b66a49-c588-4c57-95b4-e89343f0fa1f" Timeout="[CDbl(Config(&quot;SAP_TimeoutLong&quot;))]" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'No' button to release cost calculation" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c5b66a49-c588-4c57-95b4-e89343f0fa1f" Timeout="[CDbl(Config(&quot;SAP_TimeoutShort&quot;))]" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable ContentHash="aXrZYVYgb0G9HskkKdDV5Q" DesignTimeRectangle="129, 97, 83, 22" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/btnSPOP-OPTION*' text='No' type='GuiButton' /&gt;" Guid="092d5297-1714-444e-9def-7f015d7fe56b" InformativeScreenshot="6d7e015ffb71f93932e880806a3bd0f1.png" Reference="QIwDNHBmYkWUle_j6tfhqw/jKNtfgMc4EmmuoW-vLKKLg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Finalizar' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
               </uix:NClick.Target>
